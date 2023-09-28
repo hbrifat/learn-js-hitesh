@@ -1,4 +1,4 @@
-console.log("learning js from hitesh hindi => Chai Aur Code!")
+console.log("learning js from hitesh hindi")
 
 var accountName = "userName"
 let accountUser = "myUser"
