@@ -37,3 +37,18 @@ console.log(typeof num);
 let num1 = 1 + 2 + "2";
 console.log(num1);
 console.log(typeof num1);
+
+
+let num3 = 100
+console.log(num3++);
+console.log(num3);
+
+
+let num4 = 100
+num4++;
+console.log(num4);
+
+let num5 = 100;
+let num6 = num5++;
+console.log(num5);
+console.log(num6);
