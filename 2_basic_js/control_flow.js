@@ -53,6 +53,36 @@ console.log("Big Number", bigIntNumber);
 console.log(typeof bigIntNumber);
 
 
+let myNewArray = []
+
+if (myNewArray.length === 0) {
+    console.log("Empty Array!");
+} else {
+    console.log("Array has some values!!!");
+}
+
+
+let mynewObject = {}
+
+console.log(Object.keys(mynewObject).length); // first get the keys in Arrays, then get array length
+
+
+// nullish coalescing operator
+
+let val1 = 23;
+let val2 = undefined;
+let result = val1 ?? val2;
+console.log("Result::", result);
+
+
+// conditonal (ternary) operator
+
+let num1 = 10;
+let newVal = num1 > 10 ? num1 : 12
+console.log("new value::", newVal);
+
+
+
 
 
 
