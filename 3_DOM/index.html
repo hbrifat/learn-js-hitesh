@@ -5,17 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> DOM | Document Object Model</title>
 </head>
-<body>
+<body style="background-color: lightgrey; color: black;">
     <div class="parent">
-        <div class="day">MonDay</div>
-        <div class="day">TuesDay</div>
-        <div class="day">WednesDay</div>
-        <div class="day">ThursDay</div>
+        <!-- dummy comment
+         -->
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
     </div>
 </body>
 
 
 <script>
+    let parent = document.querySelector('.parent')
+    // console.log(parent.textContent)
+    // console.log(parent.innerText)
+    // console.log(parent.innerHTML);
+
+    // console.log(parent.children); // htmlCollection; look like array
+    // console.log(parent.children[0].innerText);
+
+    let childrenArray = parent.childNodes
+    // console.log(childrenArray)
+
+    // for(let i=0; i<childrenArray.length; i++) {
+    //     console.log(childrenArray[i])
+    // }
+
+    // childrenArray.forEach(element => {
+    //     console.log(element.textContent);
+    // });
+
     
+
+
 </script>
 </html>
