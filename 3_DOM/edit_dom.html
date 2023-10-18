@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit & Remove element | DOM</title>
+</head>
+<body>
+    <ul class="prog_language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+
+<script>
+    // to add a new element with function
+    function addNewLanguage(languageName){
+        let newLi = document.createElement('li');
+        // console.log(newLi);
+        newLi.innerHTML = `${languageName}`;
+        document.querySelector('.prog_language').appendChild(newLi);
+
+    }
+    addNewLanguage("TypeScript");
+
+    //another way
+    function addNewLanguageOptimizeWay(languageName) {
+        let newLi = document.createElement('li');
+        newLi.appendChild(document.createTextNode(languageName));
+        document.querySelector('.prog_language').appendChild(newLi);
+    }
+    addNewLanguageOptimizeWay("Java");
+    addNewLanguageOptimizeWay("Ruby on Rails");
+
+    // edit a element
+    const thirdLi = document.querySelector("li:nth-child(3)");
+    // console.log(thirdLi);
+    // thirdLi.innerHTML = "PHP"
+    // thirdLi.innerText = "PHP"
+    // thirdLi.textContent = "PHP"
+
+    let newLiCreate = document.createElement("li");
+    newLiCreate.textContent = "PHP";
+    thirdLi.replaceWith(newLiCreate);
+    // console.log(thirdLi); 
+
+    /*
+    if we create a new element (i.e. list item), put some txt and then replace with the previous one (i.e. list item) it works completely different rather than directly (innerHTML/textContent/innerText) put some txt with targeting list item! 
+
+    It shows when we console.log the changes. If we directly put values with targeting list item, the list item is completely changed. But if we replace the list item by creating new list item and then use replaceWith(), it doesn't change on the console, it only changes on the displayed window only!! An, then if we remove the list item with remove(), it only remove the later added list item! But, if we changed the list item directly (without creating new list item) and then use remove(), it remove the list item completely!
+
+    Same things happen, when using 'outerHTML' !
+    */ 
+
+    // another way!
+    thirdLi.remove()
+
+    //edit a element another way
+    let secondListItem = document.querySelector("li:nth-child(2)");
+    secondListItem.outerHTML = "<li> Rust </li>"
+    // console.log(secondListItem);
+
+</script>
+</html>
