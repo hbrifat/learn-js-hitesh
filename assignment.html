@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Interval</title>
+</head>
+<body>
+    <h1>Assignment One </h1>
+    <div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('start');
+
+        const stopBtn = document.getElementById('stop');
+
+        
+
+        // let interval_Id;
+
+        startBtn.addEventListener('click', function(){
+            const sayDate = function(string){
+            console.log(string, Date.now());
+        }
+            interval_Id = setInterval(sayDate, 1000, "hello!");
+        })
+
+        stopBtn.addEventListener('click', function(){
+            clearInterval(interval_Id);
+            console.log(interval_Id);
+        })
+
+    </script>
+</body>
+</html>
