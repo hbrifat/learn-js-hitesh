@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors Generator</title>
+</head>
+<body>
+    <h1>Unlimited Colors Generated - HEX values</h1>
+    <div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+
+    <script>
+        const randomColorGenerator = function(){
+            const character = "0123456789ABCDEF";
+            let generateColor = "#";
+            for(let i=0; i<6; i++){
+                generateColor += character[(Math.floor(Math.random()*16))];
+                // console.log(generateColor);
+            }
+            return generateColor;
+        }
+        console.log(randomColorGenerator());
+
+        let intervalId;
+
+        const startChangingColor = function(){
+            const changeBgColor = function(){
+                document.body.style.backgroundColor = randomColorGenerator();
+                console.log(document.body.style.backgroundColor);
+            }
+            if(!intervalId){
+                intervalId = setInterval(changeBgColor, 1000);
+            }
+            console.log(intervalId);
+        };
+
+        const stopChangingColor = function(){
+            console.log(intervalId);
+            clearInterval(intervalId);
+            intervalId = null;
+            console.log(intervalId);
+        };
+
+        document.querySelector('#start').addEventListener('click', startChangingColor);
+
+        document.querySelector('#stop').addEventListener('click', stopChangingColor);
+    </script>
+</body>
+</html>
