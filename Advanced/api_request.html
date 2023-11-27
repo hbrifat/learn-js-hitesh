@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>API - Application Programming Interface</h1>
+    <p>In the context of APIs, the word <strong>Application</strong> refers to any software with a distinct function. <strong>Interface</strong> can be thought of as a contract of service between two applications. This contract defines how the two communicate with each other using requests and responses.</p>    
+</body>
+
+<script>
+    const req_Url = 'https://api.github.com/users/hbrifat';
+    const xhr = new XMLHttpRequest();
+    // console.log(xhr)
+    xhr.open('GET', req_Url);
+    console.log(xhr.readyState);
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState == 4) {
+            
+            const myData = JSON.parse(this.responseText);
+            console.log(myData.following);
+
+        }
+    }
+    xhr.send();
+    
+</script>
+</html>
